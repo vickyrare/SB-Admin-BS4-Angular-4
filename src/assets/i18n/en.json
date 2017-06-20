@@ -1,9 +1,9 @@
 {
     "dashboard": "Dashboard",
-    "charts": "Charts",
-    "tables": "Tables",
-    "forms": "Forms",
-    "boostrapElement": "Boostrap Element",
+    "customers": "Customers",
+    "orders": "Orders",
+    "invoices": "Invoices",
+    "currencystock": "Currency Stock",
     "boostrapGrid": "Boostrap Grid",
     "component": "Component",
     "menu": "Menu",
