@@ -5,9 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+// used to create fake backend
+import { fakeBackendProvider } from './helpers/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+import { AlertComponent } from './directives/alert.component';
+import { AlertService, AuthenticationService, UserService } from "./services/index";
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -17,6 +24,7 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
     declarations: [
         AppComponent,
+        AlertComponent,
     ],
     imports: [
         BrowserModule,
@@ -31,7 +39,15 @@ export function HttpLoaderFactory(http: Http) {
             }
         })
     ],
-    providers: [AuthGuard],
+    providers: [
+        AuthGuard,
+        AlertService,
+        AuthenticationService,
+        UserService,
+        // providers used to create fake backend
+        fakeBackendProvider,
+        MockBackend,
+        BaseRequestOptions],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
