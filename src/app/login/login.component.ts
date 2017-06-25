@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
                 data => {
-                    localStorage.setItem('isLoggedin', 'true');
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
