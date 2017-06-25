@@ -11,10 +11,10 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'
+    ;
 import { AuthGuard } from './shared';
-import { AlertComponent } from './directives/alert.component';
-import { AlertService, AuthenticationService, UserService } from "./services/index";
+import { AuthenticationService, UserService } from './services/index';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -23,8 +23,7 @@ export function HttpLoaderFactory(http: Http) {
 
 @NgModule({
     declarations: [
-        AppComponent,
-        AlertComponent,
+        AppComponent
     ],
     imports: [
         BrowserModule,
@@ -41,7 +40,6 @@ export function HttpLoaderFactory(http: Http) {
     ],
     providers: [
         AuthGuard,
-        AlertService,
         AuthenticationService,
         UserService,
         // providers used to create fake backend

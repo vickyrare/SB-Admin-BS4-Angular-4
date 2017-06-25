@@ -3,9 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { AlertService } from '../services/index';
+import { AlertComponent } from '../directives/alert.component';
+
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
+
 
 @NgModule({
   imports: [
@@ -13,6 +17,7 @@ import { LoginComponent } from './login.component';
     LoginRoutingModule,
       FormsModule
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent, AlertComponent],
+    providers: [AlertService]
 })
 export class LoginModule { }
