@@ -1,4 +1,4 @@
 export class Customer {
-    constructor(private firstname: string, private lastname: string, private username: string, private branch: string) {
+    constructor(public customerNumber: string, public startDate: string, public endDate: string, public active: boolean) {
     }
 }
